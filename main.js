@@ -1,24 +1,21 @@
 
-import { ToyReact,render } from './ToyReact';
+import { ToyReact,render,Component } from './ToyReact';
 
-class MyCompoent {
+class MyCompoent extends Component{
+  constructor(props){
+    super(props);
+  }
   render(){
     return (
-      <div><span>haha</span></div>
+      <div>
+        <span>haha</span>123
+        {this.props.children}
+        </div>
     )
   }
-  setAttribute(name,value){
-    this[name] = value;
-  }
-  mountTo(parent){
-    let vdom = this.render();
-    vdom.mountTo(parent);
-  }
 }
-
-var a = (
-  <MyCompoent name="hp" id="first">
+var a = <MyCompoent name="hp" id="first">
+    <MyCompoent>1232</MyCompoent>
   </MyCompoent>
-)
 
-render(a,document.body)
+render(a,document.body);

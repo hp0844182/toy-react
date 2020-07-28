@@ -20,6 +20,9 @@ module.exports = {
       }
     ]
   },
+  devServer: {
+    contentBase: './dist',
+  },
   optimization: {
     minimize: false, // 是否压缩
   }
